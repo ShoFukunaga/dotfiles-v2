@@ -1,0 +1,4 @@
+ZDOTDIR=$HOME/.config/zsh
+
+# Homebrew (最初に読み込まれる .zshenv で設定)
+[ -x /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"

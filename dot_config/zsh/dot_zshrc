@@ -1,0 +1,65 @@
+# ~/.config/zsh/.zshrc
+
+# ===== Basic settings =====
+umask 022
+limit coredumpsize 0
+bindkey -d
+bindkey -e
+
+# ===== PATH =====
+typeset -U path
+path=(
+  /opt/homebrew/bin(N-/)
+  /opt/homebrew/opt/libpq/bin(N-/)
+  $HOME/.rd/bin(N-/)
+  $HOME/.local/bin(N-/)
+  $path
+)
+
+# ===== Homebrew =====
+[ -x /opt/homebrew/bin/brew ] && eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# ===== Plugin Manager =====
+command -v sheldon >/dev/null && eval "$(sheldon source)"
+
+# ===== Completions =====
+autoload -Uz compinit
+compinit -u
+
+# ===== Tools =====
+command -v fzf      >/dev/null && source <(fzf --zsh)
+command -v starship >/dev/null && eval "$(starship init zsh)"
+command -v mise     >/dev/null && eval "$(mise activate zsh)"
+command -v zoxide   >/dev/null && eval "$(zoxide init zsh)"
+
+# ===== Alias =====
+alias vim='nvim'
+alias c='clear'
+
+# ===== Abbreviations =====
+abbr -S g=git
+abbr -S ga="git add"
+abbr -S gc="git commit"
+abbr -S gco="git checkout"
+abbr -S gd="git diff"
+abbr -S gp="git push"
+abbr -S gl="git pull"
+abbr -S gs="git status"
+abbr -S glog="git log --oneline --graph"
+
+abbr -S d=docker
+abbr -S dc="docker compose"
+abbr -S dcu="docker compose up -d"
+abbr -S dcd="docker compose down"
+abbr -S dps="docker ps"
+
+abbr -S k=kubectl
+abbr -S kgp="kubectl get pods"
+abbr -S kgs="kubectl get svc"
+abbr -S kgd="kubectl get deploy"
+abbr -S kd="kubectl describe"
+abbr -S kl="kubectl logs"
+abbr -S kex="kubectl exec -it"
+
+abbr -S ls='eza --icons --git'
+abbr -S ll='eza -l --icons --git'

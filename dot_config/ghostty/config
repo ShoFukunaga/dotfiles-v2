@@ -1,0 +1,55 @@
+# Theme
+theme = "Catppuccin Frappe"
+
+# Font
+# ghostty +list-themes
+font-family = "HackGen Console NF"
+font-feature = -dlig
+font-feature = -liga
+font-feature = -calt
+font-size = 13.5
+
+font-style-bold = false
+font-style-italic = false
+font-style-bold-italic = false
+
+font-thicken = true
+font-thicken-strength = 48
+# adjust-cell-width = -1
+adjust-cell-height = 6 
+
+# background-opacity = 0.85
+# background-blur-radius = 20
+
+alpha-blending = linear
+
+# macOS
+macos-titlebar-style = tabs
+macos-window-shadow = false
+
+# Window
+window-padding-x = 8
+window-padding-y = 10 
+window-padding-balance = true
+
+# Shell
+shell-integration-features = no-cursor
+
+# Cursor
+cursor-style = block
+cursor-style-blink = false
+cursor-invert-fg-bg = true
+cursor-opacity = 0.8
+
+# Other
+mouse-hide-while-typing = true
+resize-overlay = never
+
+keybind = ctrl+left_bracket=text:\x1b
+
+# ⌘+hjkl → unique escape sequences (tmux pane / Neovim window navigation)
+# Kitty keyboard protocol: CSI <unicode_codepoint> ; <modifier+1> u (super=8, +1=9)
+keybind = super+h=text:\x1b[104;9u
+keybind = super+j=text:\x1b[106;9u
+keybind = super+k=text:\x1b[107;9u
+keybind = super+l=text:\x1b[108;9u
